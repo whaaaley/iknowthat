@@ -1,11 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
 
-function App() {
+import React from 'react'
+import logo from './logo.svg'
+import { Counter } from './features/counter/Counter'
+import style from 'bundle-text:./App.css'
+
+import ShadowRootTest from './features/shadow-root-test/index.js'
+
+export default function App () {
   return (
     <div className="App">
+      <style>{style}</style>
+
+      {/*
+
+      */}
+
+        <ShadowRootTest>
+          <h1>this is only a test</h1>
+        </ShadowRootTest>
+
+      {/*
+
+      */}
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
@@ -52,7 +69,5 @@ function App() {
         </span>
       </header>
     </div>
-  );
+  )
 }
-
-export default App;
