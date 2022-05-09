@@ -8,41 +8,33 @@ import sidebar from 'bundle-text:./_sidebar.scss'
 import navbar from 'bundle-text:./_navbar.scss'
 
 import Matches from '$/features/matches/index.js'
+import Messages from '$/features/messages/index.js'
 
 function Navbar (props) {
-  const [state, setState] = useState({ index: 0 })
-
-  function setMatches () {
-    setState({ index: 0 })
-    props.onChange?.(state.index)
-  }
-
-  function setMessages () {
-    setState({ index: 1 })
-    props.onChange?.(state.index)
-  }
+  const tab = index => () => props.onTab(index)
 
   return <ShadowRoot id='navbar' styles={[navbar]}>
     <nav>
-      <button onClick={setMatches}>Matches</button>
-      <button onClick={setMessages}>Messages</button>
+      <button onClick={tab(0)}>Matches</button>
+      <button onClick={tab(1)}>Messages</button>
       <div>{/* emtpy */}</div>
     </nav>
-    <hr style={{ '--index': state.index }}/>
+    <hr style={{ '--index': props.index }}/>
   </ShadowRoot>
 }
 
-function Sidebar (props) {
-  const matches = useSelector(state => state.matches.data)
-  console.log(matches)
+function Sidebar () {
+  const [state, setState] = useState({ index: 0 })
+  const onTab = index => setState({ index })
 
   return <ShadowRoot id='sidebar' styles={[sidebar]}>
-    <div className='head'>
-      Whaley
-    </div>
+    <div className='head'>Whaley</div>
     <div className='content'>
-      <Navbar/>
-      <Matches data={matches}/>
+      <Navbar index={state.index} onTab={onTab}/>
+      <div className='pages' style={{ '--index': state.index }}>
+        <Matches/>
+        <Messages/>
+      </div>
     </div>
   </ShadowRoot>
 }

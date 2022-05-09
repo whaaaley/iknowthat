@@ -24,5 +24,13 @@
   background: rgb(var(--red));
 }
 
-.content {
+.pages {
+  --page-offset: var(--index) * -100%;
+  --page-gap: var(--index) * 24px;
+
+  display: grid;
+  grid: auto / 100% 100%;
+  gap: 24px;
+  transition: transform 200ms;
+  transform: translate(calc(var(--page-offset) - var(--page-gap)), 0);
 }
