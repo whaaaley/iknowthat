@@ -15,6 +15,7 @@ root.render(<React.StrictMode>
   </Provider>
 </React.StrictMode>)
 
+// TODO: Ignore this. Parcel has a bug. This is for dev only.
 let index = 0
 
 const observer = new MutationObserver(function () {

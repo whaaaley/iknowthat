@@ -19,7 +19,7 @@ function Message ({ data: { uid, message } }) {
   </div>
 }
 
-export default function () {
+export default function Chat () {
   const [state, setState] = useState({ message: '' })
 
   const dispatch = useDispatch()
