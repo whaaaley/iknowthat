@@ -1,0 +1,77 @@
+
+:host {
+  all: initial;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+#chat {
+  font: 16px/1 'Inter', sans-serif;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.head,
+.history {
+  padding: 24px;
+}
+
+.head {
+  border-bottom: 1px solid rgb(var(--light-200));
+}
+
+.history {
+  display: grid;
+  gap: 24px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+}
+
+.photo {
+  width: 48px;
+  height: 48px;
+  background: blue;
+  border-radius: 24px;
+}
+
+.text-box {
+  margin: 10px 0 0; // temporary
+  padding: 12px 18px;
+  border-radius: 24px 24px 24px 6px;
+  background: rgb(var(--light-100));
+  font: 300 14px/1 'Inter', sans-serif;
+
+  &.-sent {
+    background: rgb(var(--blue));
+  }
+}
+
+.message-box {
+  display: flex;
+  padding: 12px;
+}
+
+button {
+  padding: 0 24px;
+  height: 42px;
+  border-radius: 21px;
+  border: initial;
+  cursor: pointer;
+  background: rgb(var(--light-200));
+
+  &.-active {
+    color: #fff;
+    background: rgb(var(--red));
+  }
+}
+
+input {
+
+}
