@@ -1,0 +1,28 @@
+
+:host {
+  all: initial;
+  background: #fff;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+#sidebar {
+  font: 16px/1 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.head, .content {
+  padding: 18px 24px;
+}
+
+.head {
+  color: #fff;
+  background: rgb(var(--red));
+}
+
+.content {
+}

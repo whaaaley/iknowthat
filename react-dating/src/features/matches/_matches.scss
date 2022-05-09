@@ -1,0 +1,36 @@
+
+:host {
+  all: initial;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+#matches {
+  display: grid;
+  padding: 24px 0 0;
+  grid: auto / 1fr 1fr 1fr;
+  gap: 12px;
+  font: 16px/1 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.card {
+  border-radius: 12px;
+  background: var(--photo) center / cover no-repeat;
+  transition: transform 200ms;
+  cursor: pointer;
+
+  &::before  {
+    content: '';
+    display: block;
+    padding: 0 0 120%;
+  }
+
+  &:hover {
+    transform: scale(110%);
+  }
+}

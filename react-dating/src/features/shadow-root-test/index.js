@@ -1,13 +1,12 @@
 
-import ShadowRoot from '../../modules/ShadowRoot.js'
+import ShadowRoot from '$/modules/ShadowRoot.js'
 import style from 'bundle-text:./shadow-root-test.css'
 
-export default function (props, children) {
+export default function (props) {
   return <ShadowRoot id='shadow-root-test' styles={[style]}>
-    <h1>this is only a test</h1>
-    <h1>this is only a test</h1>
-    <h1>this is only a test</h1>
-    <h1>this is only a test</h1>
-    <h1>this is only a test</h1>
+    <div>
+      <h1>Hello world!</h1>
+      {props.children}
+    </div>
   </ShadowRoot>
 }

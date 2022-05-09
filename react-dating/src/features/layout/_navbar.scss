@@ -1,0 +1,43 @@
+
+:host {
+  all: initial;
+  background: #fff;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+#navbar {
+  font: 16px/1 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+button, hr {
+  border: initial;
+}
+
+button {
+  padding: 6px;
+  font: 600 14px/1 'Inter', sans-serif;
+  background: initial;
+  cursor: pointer;
+}
+
+nav {
+  display: grid;
+  grid: auto / 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+hr {
+  width: calc(100% / 3);
+  margin: initial;
+  height: 4px;
+  background: rgb(var(--red));
+  border-radius: 2px;
+  transition: transform 200ms;
+  transform: translate(calc(var(--index) * 100%), 0);
+}

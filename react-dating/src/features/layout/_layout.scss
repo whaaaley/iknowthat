@@ -1,0 +1,18 @@
+
+:host {
+  all: initial;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+#layout {
+  display: grid;
+  grid: auto / 360px auto;
+  font: 16px/1 'Inter', sans-serif;
+  box-sizing: border-box;
+  height: 100vh;
+}

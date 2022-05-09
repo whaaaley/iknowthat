@@ -1,0 +1,47 @@
+
+@use 'sass:color';
+@use 'sass:map';
+
+@function rgb-string($color) {
+  $red: color.red($color);
+  $green: color.green($color);
+  $blue: color.blue($color);
+
+  @return '#{$red}, #{$green}, #{$blue}';
+}
+
+$rainbow: (
+  'red': rgb(255, 94, 112),
+  'orange': rgb(255, 126, 0),
+  'yellow': rgb(255, 174, 0),
+  'green': rgb(0, 236, 120),
+  'blue': rgb(83, 179, 255),
+  'purple': rgb(207, 143, 255)
+);
+
+$light: (
+  // 'light-600': oklab(70, 0, -10),
+  // 'light-500': oklab(75, 0, -9),
+  // 'light-400': oklab(80, 0, -8),
+  // 'light-300': oklab(85, 0, -7),
+  // 'light-200': oklab(90, 0, -6),
+  'light-100': rgb(255 - 16, 255 - 16, 255 - 8)
+);
+
+// $dark: (
+//   'dark-600': oklab(5, 0, -2),
+//   'dark-500': oklab(10, 0, -1),
+//   'dark-400': oklab(15, 0, -2),
+//   'dark-300': oklab(20, 0, -2),
+//   'dark-200': oklab(30, 0, -2),
+//   'dark-100': oklab(40, 0, -2),
+// );
+
+$color-map: map.merge($rainbow, $light);
+// $color-map: map.merge($color-map, $dark);
+
+:root {
+  @each $key, $value in $color-map {
+    --#{$key}: #{rgb-string($value)};
+  }
+}

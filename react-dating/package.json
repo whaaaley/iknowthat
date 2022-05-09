@@ -6,8 +6,8 @@
   "author": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "start": "parcel src/index.html"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
@@ -16,7 +16,10 @@
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "^2.5.0",
-    "parcel": "^2.5.0"
+    "@parcel/transformer-sass": "^2.5.0",
+    "culori": "^2.0.3",
+    "parcel": "^2.5.0",
+    "sass": "^1.51.0"
   },
   "optionalDependencies": {
     "eslint": "^8.14.0",
@@ -28,5 +31,8 @@
     "stylelint": "13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0"
+  },
+  "alias": {
+    "$": "./src"
   }
 }
