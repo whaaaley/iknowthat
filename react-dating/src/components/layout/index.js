@@ -7,8 +7,8 @@ import layout from 'bundle-text:./_layout.scss'
 import sidebar from 'bundle-text:./_sidebar.scss'
 import navbar from 'bundle-text:./_navbar.scss'
 
-import Matches from '$/features/matches/index.js'
-import Messages from '$/features/messages/index.js'
+import Matches from '$/components/matches/index.js'
+import Messages from '$/components/messages/index.js'
 
 function Navbar (props) {
   const tab = index => () => props.onTab(index)

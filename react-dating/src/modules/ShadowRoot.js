@@ -2,17 +2,13 @@
 import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-const shadowInit = {
-  mode: 'open'
-}
-
-export default function ({ id, styles, slots, children }) {
+export default function ShadowRoot ({ id, styles, slots, children }) {
   const slotList = []
   const styleList = []
 
   if (slots) {
     for (const key in slots) {
-      slotList.push(<div slot={key}>{slots[key]}</div>)
+      slotList.push(<div key={key} slot={key}>{slots[key]}</div>)
     }
   }
 
@@ -23,7 +19,7 @@ export default function ({ id, styles, slots, children }) {
   }
 
   const ref = useRef(null)
-  const [state, setState] = useState({ isMounted: false})
+  const [state, setState] = useState({ isMounted: false })
 
   const root = document.createElement('div')
   let node
@@ -36,7 +32,7 @@ export default function ({ id, styles, slots, children }) {
       node = value
 
       if (!state.isMounted) {
-        node.attachShadow(shadowInit).appendChild(root)
+        node.attachShadow({ mode: 'open' }).appendChild(root)
 
         setState({
           root,
