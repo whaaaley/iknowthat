@@ -15,11 +15,11 @@
   gap: 12px;
   font: 16px/1 'Inter', sans-serif;
   box-sizing: border-box;
-  padding: 0 18px;
+  padding: 12px 18px;
 }
 
 .card {
-  border-radius: 12px;
+  border-radius: 6px;
   background: var(--photo) center / cover no-repeat;
   transition: transform 200ms;
   cursor: pointer;

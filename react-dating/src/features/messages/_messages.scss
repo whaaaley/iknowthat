@@ -10,8 +10,38 @@
 }
 
 #messages {
-  display: grid;
   font: 16px/1 'Inter', sans-serif;
   box-sizing: border-box;
   background: rgb(var(--light-200));
+  overflow: hidden;
+  padding: 24px 0 0;
+}
+
+.item {
+  display: flex;
+  gap: 18px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition:
+    background-color 200ms,
+    box-shadow 200ms,
+    border-color 200ms;
+  border-right: 4px solid transparent;
+
+  &.-active,
+  &:hover {
+    box-shadow: 0 0 12px rgb(#000, 0.125);
+    border-right: 4px solid rgb(var(--red));
+  }
+
+  &.-active {
+    background: #fff;
+  }
+}
+
+.photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+  background: blue;
 }

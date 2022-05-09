@@ -13,10 +13,11 @@
 #sidebar {
   font: 16px/1 'Inter', sans-serif;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .head {
-  padding: 18px 24px;
+  padding: 24px;
   color: #fff;
   background: rgb(var(--red));
 }
