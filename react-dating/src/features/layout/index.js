@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import ShadowRoot from '$/modules/ShadowRoot.js'
 
 import layout from 'bundle-text:./_layout.scss'
@@ -7,34 +8,6 @@ import sidebar from 'bundle-text:./_sidebar.scss'
 import navbar from 'bundle-text:./_navbar.scss'
 
 import Matches from '$/features/matches/index.js'
-
-function animeURL () {
-  return 'https://boredhumans.b-cdn.net/anime_images/twdne/' +
-    Math.floor(Math.random() * 100000) + '.jpg'
-}
-
-const matches = [
-  {
-    name: 'John',
-    age: '25',
-    photo: animeURL()
-  },
-  {
-    name: 'Jane',
-    age: '26',
-    photo: animeURL()
-  },
-  {
-    name: 'Jack',
-    age: '27',
-    photo: animeURL()
-  },
-  {
-    name: 'Jill',
-    age: '28',
-    photo: animeURL()
-  }
-]
 
 function Navbar (props) {
   const [state, setState] = useState({ index: 0 })
@@ -60,6 +33,9 @@ function Navbar (props) {
 }
 
 function Sidebar (props) {
+  const matches = useSelector(state => state.matches.data)
+  console.log(matches)
+
   return <ShadowRoot id='sidebar' styles={[sidebar]}>
     <div className='head'>
       Whaley
