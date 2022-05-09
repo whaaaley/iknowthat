@@ -29,12 +29,10 @@ function Sidebar () {
 
   return <ShadowRoot id='sidebar' styles={[sidebar]}>
     <div className='head'>Whaley</div>
-    <div className='content'>
-      <Navbar index={state.index} onTab={onTab}/>
-      <div className='pages' style={{ '--index': state.index }}>
-        <Matches/>
-        <Messages/>
-      </div>
+    <Navbar index={state.index} onTab={onTab}/>
+    <div className='pages' style={{ '--index': state.index }}>
+      <Matches/>
+      <Messages/>
     </div>
   </ShadowRoot>
 }

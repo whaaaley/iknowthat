@@ -16,6 +16,7 @@ export default function () {
 
       return <div className='item' style={variables} key={index}>
         {/* nothing yet... */}
+        <h1>hi</h1>
       </div>
     })}
   </ShadowRoot>

@@ -1,0 +1,17 @@
+
+:host {
+  all: initial;
+}
+
+* {
+  color: inherit;
+  font: inherit;
+  box-sizing: inherit;
+}
+
+#messages {
+  display: grid;
+  font: 16px/1 'Inter', sans-serif;
+  box-sizing: border-box;
+  background: rgb(var(--light-200));
+}
